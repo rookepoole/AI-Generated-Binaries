@@ -1,0 +1,161 @@
+PARS-DEEP EXACT-BINARY SHOWCASE RECEIPT
+======================================
+Artifact: PARS_LATTICE_DREAM_3D_PORTAL_CHAMBER_X64.elf
+Title: PARS // LATTICE DREAM 3D — Portal Chamber Vertical Slice
+Build date: 2026-08-06
+
+AUTHORITATIVE RESULT
+--------------------
+A sealed x86-64 Linux ELF that opens a native 1920x1080 GLX window and renders
+an interactive three-dimensional portal chamber with embedded GLSL shaders.
+The world is generated from procedural geometry and mathematical materials.
+No PNG, JPEG, video, mesh/model file, texture image, browser page, or external
+game asset accompanies or is read by the executable.
+
+This artifact supersedes the earlier 2D direct-X11 perspective demonstration.
+It is the renderer proof chamber for the future larger explorable world.
+
+EXACT ELF
+---------
+Size: 31,288 bytes
+SHA-256: 80234c63d2f9e217ad1474d30dd2f8e94705d7bdf50ee600c2b4bb45e991fded
+Format: ELF64 x86-64 position-independent executable, stripped
+Entry point: 0x43a0
+Program headers: 14
+Section headers: 29
+Runtime execution exit code: 0
+Default showcase duration: approximately 28 seconds
+
+HOST GRAPHICS DEPENDENCIES
+--------------------------
+The ELF uses the host graphics stack rather than containing a software GPU:
+- libX11.so.6
+- libGL.so.1 / GLX
+- libm.so.6
+- libc.so.6
+- an X11 display and an OpenGL-capable Mesa or hardware driver
+
+This is a single executable and contains no external media assets, but it is
+not a statically linked or graphics-driver-independent binary.
+
+TRUE 3D AND SHADER FEATURES
+---------------------------
+- Perspective projection and movable first-person camera
+- Depth-buffered triangle/quad rasterization
+- 3D bridge, side platforms, chasm water, walls, columns, arches and altar
+- Procedurally constructed cylinders, spheres, boxes and torus geometry
+- Animated portal disk, concentric emissive rings and orbiting particles
+- Embedded GLSL 1.20 vertex and fragment shader source
+- Procedural stone blocks, cracks, moss, brushed metal and animated water
+- Per-fragment normal perturbation
+- Directional moon light
+- Dynamic blue portal point light
+- Dynamic amber chamber light
+- Per-fragment diffuse and specular illumination
+- Atmospheric distance fog and nonlinear tone mapping
+- Animated rain, stars, portal particles and shader state
+- Bounded movement and camera-state interaction
+
+CONTROLS
+--------
+W / S: move forward and backward
+A / D: strafe left and right
+Mouse: look around
+Space: activate and intensify the portal
+P: toggle autopilot
+Escape: exit
+
+PERFORMANCE
+-----------
+Sandbox software renderer: Mesa llvmpipe through Xvfb/GLX
+Uncaptured measured rate: 17.03 rendered frames per second
+While recording at 1920x1080: 16.04 rendered frames per second
+Runtime recording cadence: 15 fps
+
+RUNTIME RECORDING
+-----------------
+File: PARS_LATTICE_DREAM_3D_RUNTIME_RECORDING_1080P.mp4
+Resolution: 1920x1080
+Frame rate: 15 fps
+Duration: 29.066667 seconds
+Frames: 436
+SHA-256: b5f2094a62b837d4a4bb3e3d46836f608780c9aac3fae9c87a98e80d7a0f39ec
+
+The recorded run included synthetic Space, D and P input events. The program
+completed normally with exit code 0.
+
+SAME-SCENE MOTION AUDIT
+-----------------------
+Frames sampled 0.5 seconds apart:
+- 2.0 s: 14.48% of pixels changed above threshold
+- 8.0 s: 15.33%
+- 14.0 s: 16.01%
+- 20.0 s: 3.88%
+- 26.0 s: 25.62%
+
+Full machine-readable audit:
+PARS_LATTICE_DREAM_3D_MOTION_AUDIT.json
+
+EXACT BYTE STREAM PROOF
+-----------------------
+Text dump: PARS_LATTICE_DREAM_3D_EXACT_BYTE_STREAM.hex
+Coverage: byte offset 0x00000000 through 0x00007a37
+Bytes per line: 16
+Video pages: 46
+Every byte of the final 31,288-byte ELF is visibly represented in file-offset
+order in the first segment of the exact-generation recording. The pages may be
+paused for manual inspection.
+
+EXACT REGENERATION
+------------------
+Forge: PARS_LATTICE_DREAM_3D_EXACT_BYTE_FORGE_X64.elf
+Forge size: 31,682 bytes
+Forge SHA-256: f2d61b7d522e8e86f0978915a645bdfc40e97e1d4a02f0814505eb66f0d7c6b1
+
+The forge created PARS_LATTICE_DREAM_3D_REGENERATED_X64.elf from a clean
+directory. Independent verification results:
+- Forge exit code: 0
+- Generated size: 31,288 bytes
+- Generated SHA-256: 80234c63d2f9e217ad1474d30dd2f8e94705d7bdf50ee600c2b4bb45e991fded
+- file recognized the regenerated ELF
+- cmp byte-for-byte identity: PASS
+- regenerated ELF execution exit code: 0
+
+Generation recording:
+PARS_LATTICE_DREAM_3D_EXACT_GENERATION_RECORDING_1080P.mp4
+Resolution: 1920x1080
+Frame rate: 30 fps
+Duration: 26.033333 seconds
+Frames: 781
+SHA-256: eb0fb106253098efd5d792165e6fcac2612a01b38d1c0766730a2891528221c5
+
+CLAIM BOUNDARIES
+----------------
+- This is a genuine 3D shader-driven portal chamber, not a 2D perspective scene.
+- It is a vertical renderer slice, not yet the promised multi-zone open world.
+- The video recorder is external evidence and is not embedded in the ELF.
+- The exact-byte forge proves deterministic byte identity, not hidden model
+  reasoning or an absence of private build tooling.
+- The host OpenGL/X11 stack is required; no external media or world asset is.
+
+RUN
+---
+On Linux x86-64 with X11 and OpenGL/GLX:
+
+  chmod +x PARS_LATTICE_DREAM_3D_PORTAL_CHAMBER_X64.elf
+  ./PARS_LATTICE_DREAM_3D_PORTAL_CHAMBER_X64.elf
+
+FINAL STATUS
+------------
+True perspective 3D: PASS
+Depth-tested geometry: PASS
+Embedded shaders: PASS
+Procedural materials: PASS
+Interactive camera/input: PASS
+Animated portal/environment: PASS
+Native 1920x1080 output: PASS
+No imported media assets: PASS
+Clean execution: PASS
+Complete byte stream shown in proof video: PASS
+Exact byte regeneration: PASS
+Full multi-zone world: NOT YET — next expansion target
